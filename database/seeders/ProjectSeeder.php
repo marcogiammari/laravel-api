@@ -20,7 +20,7 @@ class ProjectSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             $newProject = new Project();
             $newProject->name = $faker->domainName();
-            $newProject->description = $faker->paragraphs(5, true);
+            $newProject->description = $faker->paragraphs(3, true);
             $newProject->image = "placeholders/image-not-available.jpg";
             $newProject->link = $faker->url();
             $newProject->save();

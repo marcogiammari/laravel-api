@@ -94,6 +94,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
+        if ($project->image != "placeholders/placeholder.png") {
+            Storage::delete($project->image);
+        }
         $data = $request->validated();
         $img_path = Storage::put("uploads", $data['image']);
         $data['image'] = $img_path;
